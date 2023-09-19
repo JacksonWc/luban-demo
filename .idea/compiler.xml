@@ -2,16 +2,30 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for luban-demo" enabled="true">
-        <sourceOutputDir name="../../../target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../../../target/generated-test-sources/test-annotations" />
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="luban-demo-common" />
+        <module name="luban-demo-all-api" />
         <module name="luban-log-springboot-test" />
+        <module name="luban-demo-all-main" />
+        <module name="luban-demo-protocol" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="luban-log-demo" target="8" />
       <module name="luban-log-springboot-study" target="8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="luban-demo-all" options="-parameters" />
+      <module name="luban-demo-all-api" options="-parameters" />
+      <module name="luban-demo-all-main" options="-parameters" />
+      <module name="luban-demo-common" options="-parameters" />
+      <module name="luban-demo-protocol" options="-parameters" />
+    </option>
   </component>
 </project>

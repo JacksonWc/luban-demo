@@ -19,6 +19,8 @@ public class LogSpringBoot {
     public static void main(String[] args) {
         //运行spring应用
         SpringApplication.run(LogSpringBoot.class,args);
+        logger.trace("trace");
+        logger.debug("debug");
         //打印一些日志
         logger.info("获取jvm 参数："+Arrays.toString(args));
     }

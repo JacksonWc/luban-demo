@@ -4,23 +4,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
+
     <modules>
-        <module>luban-demo-all</module>
-        <module>luban-demo-common</module>
-        <module>luban-demo-protocol</module>
+
         <module>luban-log-study</module>
-        <module>luban-rocketmq-study</module>
+        <module>luban-demo-protocol</module>
+        <module>luban-demo-common</module>
+        <module>luban-demo-all</module>
+
     </modules>
+
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.9</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+
     <groupId>com.tarena.luban.demo</groupId>
     <artifactId>luban-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>微服务测试案例父级工程</description>
+
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
