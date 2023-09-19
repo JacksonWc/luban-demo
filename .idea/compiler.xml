@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="luban-log-springboot-test" />
-      </profile>
-    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="luban-log-demo" target="8" />
       <module name="luban-log-springboot-study" target="8" />
+      <module name="luban-log-springboot-test" target="8" />
+      <module name="luban-log-study" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
