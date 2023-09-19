@@ -1,0 +1,11 @@
+logging:
+  level:
+    #定义日志输出范围 root 和 自定义logger相同
+    #root 所有当前项目 依赖资源 jar包源码日志 都在范围中
+    #自定义一个返回 可以使用包路径
+    com.tarena: debug
+  file:
+    #当前springboot日志输入的日志文件 全路径名称
+    name: ./logs/test.log
+    #默认日志文件 spring.log
+    #path: ./path/logs
