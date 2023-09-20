@@ -14,6 +14,7 @@
     <modules>
         <module>luban-demo-order-api</module>
         <module>luban-demo-main</module>
+        <module>luban-demo-order-main</module>
     </modules>
 
     <properties>
