@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.tarena.demo.luban.all.com.tarena.demo.luban.all.main.mapper")
-public class AllMain {
+public class CartMain {
     public static void main(String[] args) {
-        SpringApplication.run(AllMain.class,args);
+        SpringApplication.run(CartMain.class,args);
     }
 }

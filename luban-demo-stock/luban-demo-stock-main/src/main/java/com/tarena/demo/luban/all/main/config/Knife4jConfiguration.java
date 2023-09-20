@@ -32,8 +32,8 @@ public class Knife4jConfiguration {
     @Bean
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("鲁班测试案例")
-            .description("鲁班测试案例")
+            .title("鲁班库存测试案例")
+            .description("鲁班库存测试案例")
             .termsOfServiceUrl("地址待定")
             .contact(new Contact("", "", ""))
             .version("1.0")

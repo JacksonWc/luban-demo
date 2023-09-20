@@ -1,7 +1,7 @@
 server:
-  port: 9000
+  port: 9001
 spring:
   application:
-    name: luban-demo-all
+    name: luban-demo-cart
   profiles:
     active: local
