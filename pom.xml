@@ -11,6 +11,9 @@
         <module>luban-demo-protocol</module>
         <module>luban-demo-common</module>
         <module>luban-demo-all</module>
+        <module>luban-demo-cart</module>
+        <module>luban-demo-order</module>
+        <module>luban-demo-stock</module>
 
     </modules>
 

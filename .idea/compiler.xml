@@ -8,10 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="luban-demo-common" />
-        <module name="luban-demo-all-api" />
+        <module name="luban-demo-cart-main" />
+        <module name="luban-demo-order-api" />
+        <module name="luban-demo-cart-api" />
         <module name="luban-log-springboot-test" />
         <module name="luban-demo-all-main" />
         <module name="luban-demo-protocol" />
+        <module name="luban-demo-stock-api" />
+        <module name="luban-demo-main" />
+        <module name="luban-demo-all-api" />
+        <module name="luban-demo-stock-main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,8 +30,17 @@
       <module name="luban-demo-all" options="-parameters" />
       <module name="luban-demo-all-api" options="-parameters" />
       <module name="luban-demo-all-main" options="-parameters" />
+      <module name="luban-demo-cart" options="-parameters" />
+      <module name="luban-demo-cart-api" options="-parameters" />
+      <module name="luban-demo-cart-main" options="-parameters" />
       <module name="luban-demo-common" options="-parameters" />
+      <module name="luban-demo-main" options="-parameters" />
+      <module name="luban-demo-order" options="-parameters" />
+      <module name="luban-demo-order-api" options="-parameters" />
       <module name="luban-demo-protocol" options="-parameters" />
+      <module name="luban-demo-stock" options="-parameters" />
+      <module name="luban-demo-stock-api" options="-parameters" />
+      <module name="luban-demo-stock-main" options="-parameters" />
     </option>
   </component>
 </project>
