@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-    @Autowired
-    private CartService cartService;
-    @Autowired
-    private StockService stockService;
+//    @Autowired
+//    private CartService cartService;
+//    @Autowired
+//    private StockService stockService;
     @Autowired
     private OrderMapper orderMapper;
     @Override public void addOrder(OrderAddParam param) {
@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
         stockReduceCountParam.setReduceCount(param.getCount());
         stockReduceCountParam.setProductCode(param.getProductCode());
         stockReduceCountParam.setOrderSn(param.getOrderSn());
-        stockService.reduceCommodityCount(stockReduceCountParam);
+       // stockService.reduceCommodityCount(stockReduceCountParam);
         //增订单
         OrderDO orderDO=new OrderDO();
         BeanUtils.copyProperties(param,orderDO);
@@ -34,6 +34,6 @@ public class OrderServiceImpl implements OrderService {
         CartDeleteParam cartDeleteParam=new CartDeleteParam();
         cartDeleteParam.setUserId(param.getUserId());
         cartDeleteParam.setProductCode(param.getProductCode());
-        cartService.deleteCart(cartDeleteParam);
+        //cartService.deleteCart(cartDeleteParam);
     }
 }
