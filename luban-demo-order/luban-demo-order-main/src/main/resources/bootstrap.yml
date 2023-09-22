@@ -1,0 +1,51 @@
+spring:
+  profiles:
+    # 定义环境 local dev test prod
+    active: local
+# ---是必要的语法
+# 一套独立的环境配置
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  # 配置远程配置中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        # 配置分级管理
+        # namespace: 441a04b1-9d04-460c-bc15-7c7e542f608d
+        # group: 1.0.0
+        server-addr: localhost:8848
+        # 要求读取文件后缀 默认properties
+        file-extension: yml
+        # 自定义 远程读取配置文件
+        shared-configs:
+          # 文件名称
+            - dataId: mybatis.yml
+              # 监听文件变动 true执行监听,false不执行监听
+              refresh: true
+            - dataId: datasource.yml
+              # 监听文件变动 true执行监听,false不执行监听
+              refresh: true
+
+  application:
+    name: luban-demo-order
+server:
+  port: 9003
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+server:
+  port: 9021
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+server:
+  port: 9022

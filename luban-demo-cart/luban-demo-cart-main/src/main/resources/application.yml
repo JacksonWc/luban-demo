@@ -1,15 +1,18 @@
-server:
-  port: 9001
-spring:
-  cloud:
-    nacos:
-      discovery:
+#spring:
+  #cloud:
+    #nacos:
+      #discovery:
         # 指向nacos服务端
-        server-addr: 127.0.0.1:8848
-  application:
+        #server-addr: 127.0.0.1:8848
+        # 是否是临时实例
+        # ephemeral: false
+        # 客户端注册 使用的实例ip地址
+        # ip: 19.0.9.8
+        # namespace: 441a04b1-9d04-460c-bc15-7c7e542f608d
+        # group: 1.0.0.RELEASE
+  #application:
     # 在spring cloud alibaba微服务框架中
     # web应用的该属性,就会被当成一个服务名称来使用
     # 如果业务功能不同,服务名称 值也要不同
-    name: luban-demo-cart
-  profiles:
-    active: local
+    # name: luban-demo-cart
+
