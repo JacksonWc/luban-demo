@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://dubbo.apache.org/schema/dubbo
+    http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+<!--    步骤1-->
+    <!--定义应用 dubbo概念中也有应用，建议和项目的名称一致-->
+    <dubbo:application name="${spring.application.name}">
+        <!--qos关闭，不关可能导致不同应用的qos的端口冲突，而且我们不用qos-->
+        <dubbo:parameter key="qos" value="false"/>
+    </dubbo:application>
+    <!--注册中心配置，就是去哪个注册中心注册，这里的protocol就是分割网址nacos://localhost:8848能得到的-->
+    <dubbo:registry id ="nacos" protocol="nacos" address="localhost:8848"
+            use-as-config-center="false" use-as-metadata-center="false"/>
+    <!--dubbo配置协议，就是rpc相关的内容，name是协议，这里还可以配注册的ip 设置ip port -1 同一个服务器端口 会从20880开始向后顺延 协议名称-->
+    <dubbo:protocol name="dubbo" port="-1"/>
+    <!--dubbo配置spring中的 暴露接口 和接口实现 创建过程交给spring管理,使用dubbo在用-->
+    <!--provider 对应service  consumer 对应 referrence-->
+    <!--springxml 相当于bean标签，创建dubbo中的配置对象，ref（本质是beadid）体现了和spring的整合；registry要和注册中心的name一致-->
+    <dubbo:service interface="luban.demo.cart.api.DubboTestApi"
+                   ref="dubboTestApiImpl" registry="nacos"/>
+</beans>

@@ -1,6 +1,6 @@
 package luban.demo.cart.test;
 
-import com.tarena.demo.luban.all.main.DubboTestApiImpl;
+import com.tarena.demo.luban.all.main.rpc.DubboTestApiImpl;
 import luban.demo.cart.api.DubboTestApi;
 import org.apache.dubbo.config.ProtocolConfig;
 import org.apache.dubbo.config.RegistryConfig;
