@@ -55,8 +55,15 @@
             <artifactId>luban-demo-cart-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.tarena.luban.demo</groupId>
+            <artifactId>luban-demo-stock-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
-<!--        步骤6-->
+
+
+        <!--        步骤6-->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo</artifactId>

@@ -20,4 +20,13 @@
     <!--check = false 表示消费者启动时候会不会检查抓取的provider存在还是不存在-->
     <dubbo:reference id="dubboTestApi" interface="luban.demo.cart.api.DubboTestApi"
          registry="nacos" check="false"/>
+
+
+    <dubbo:reference id="consumerCartApi" interface="luban.demo.cart.api.CartApi"
+                     registry="nacos" check="false"/>
+
+    <dubbo:reference id="consumerStockApi" interface="luban.demo.stock.api.StockApi"
+                     registry="nacos" check="false"/>
+
+
 </beans>

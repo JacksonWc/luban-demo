@@ -7,16 +7,18 @@ import com.tarena.demo.luban.protocol.order.param.OrderAddParam;
 import com.tarena.demo.luban.protocol.stock.param.StockReduceCountParam;
 import com.tarena.demo.luban.all.main.mapper.OrderMapper;
 import com.tarena.demo.luban.all.main.service.OrderService;
+import luban.demo.cart.api.CartApi;
+import luban.demo.stock.api.StockApi;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-//    @Autowired
-//    private CartService cartService;
-//    @Autowired
-//    private StockService stockService;
+    @Autowired(required = false)
+    private CartApi consumerCartApi;
+    @Autowired
+    private StockApi stockApi;
     @Autowired
     private OrderMapper orderMapper;
     @Override public void addOrder(OrderAddParam param) {
@@ -25,7 +27,7 @@ public class OrderServiceImpl implements OrderService {
         stockReduceCountParam.setReduceCount(param.getCount());
         stockReduceCountParam.setProductCode(param.getProductCode());
         stockReduceCountParam.setOrderSn(param.getOrderSn());
-       // stockService.reduceCommodityCount(stockReduceCountParam);
+        stockApi.reduceCommodityCount(stockReduceCountParam);
         //增订单
         OrderDO orderDO=new OrderDO();
         BeanUtils.copyProperties(param,orderDO);
@@ -35,5 +37,6 @@ public class OrderServiceImpl implements OrderService {
         cartDeleteParam.setUserId(param.getUserId());
         cartDeleteParam.setProductCode(param.getProductCode());
         //cartService.deleteCart(cartDeleteParam);
+        consumerCartApi.deleteCart(cartDeleteParam);
     }
 }

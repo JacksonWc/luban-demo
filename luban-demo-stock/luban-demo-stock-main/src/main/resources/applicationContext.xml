@@ -20,12 +20,9 @@
     <!--dubbo配置spring中的 暴露接口 和接口实现 创建过程交给spring管理,使用dubbo在用-->
     <!--provider 对应service  consumer 对应 referrence-->
     <!--springxml 相当于bean标签，创建dubbo中的配置对象，ref（本质是beadid）体现了和spring的整合；registry要和注册中心的name一致-->
-    <dubbo:service interface="luban.demo.cart.api.DubboTestApi"
-                   ref="dubboTestApiImpl" registry="nacos"/>
+    <dubbo:service interface="luban.demo.stock.api.StockApi"
+                   ref="stockApiImpl" registry="nacos"/>
 
-
-    <dubbo:service interface="luban.demo.cart.api.CartApi"
-                   ref="cartApiImpl" registry="nacos"/>
 
 
 </beans>
