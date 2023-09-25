@@ -18,6 +18,7 @@
         <module name="luban-demo-stock-api" />
         <module name="luban-demo-all-api" />
         <module name="luban-demo-stock-main" />
+        <module name="luban-demo-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,6 +36,7 @@
       <module name="luban-demo-cart-api" options="-parameters" />
       <module name="luban-demo-cart-main" options="-parameters" />
       <module name="luban-demo-common" options="-parameters" />
+      <module name="luban-demo-gateway" options="-parameters" />
       <module name="luban-demo-main" options="-parameters" />
       <module name="luban-demo-order" options="-parameters" />
       <module name="luban-demo-order-api" options="-parameters" />

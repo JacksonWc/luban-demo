@@ -1,0 +1,14 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: luban-demo-gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: demo-redirect
+          uri: http://127.0.0.1:9002
+          predicates:
+            - Path=/**
