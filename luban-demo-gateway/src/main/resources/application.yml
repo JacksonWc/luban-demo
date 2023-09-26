@@ -1,14 +1,34 @@
 server:
+  #端口
   port: 10000
 spring:
   application:
+    # spring应用名称
     name: luban-demo-gateway
   main:
+    # springcloud gateway 底层框架webflux 和tomcat里的servlet有冲突
+    # spring-boot-starter-web 需要这个值避免冲突
     web-application-type: reactive
   cloud:
     gateway:
+      # 为入门案例转发,做一个路由配置
+      # routes 是一个list类型属性
+      # 表示可以在网关中配置的路由规则
       routes:
-        - id: demo-redirect
-          uri: http://127.0.0.1:9002
+        - id: cart-test
+          # 指定访问一个uri: http://127.0.0.1:9011
+          uri: lb://luban-demo-cart
           predicates:
-            - Path=/**
+            - Path=/cart/**
+          filters:
+            - StripPrefix=1
+        - id: stock-test
+          #uri: http://127.0.0.1:9002
+          uri: lb://luban-demo-stock
+          predicates:
+            - Path=/stock/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        server-addr: localhost:8848
