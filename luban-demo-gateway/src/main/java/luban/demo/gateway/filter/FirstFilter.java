@@ -27,7 +27,7 @@ public class FirstFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        System.out.println("进入到firstFilter,但是什么都没做");
+       // System.out.println("进入到firstFilter,但是什么都没做");
         //System.out.println("进入到firstFilter,但是什么都没做");
         //request对象 包含请求url地址 path 请求query参数 请求头数据
         //从exchange拿到请求对象
@@ -44,8 +44,8 @@ public class FirstFilter implements GlobalFilter, Ordered {
         //name[0]=haha&name[1]=gaga 不会像springmvc一样整理成list数据,只会单独封装
         //query在当前方法的value值永远都是一个元素的list对象.
         List<String> name = queryParams.get("name");
-        System.out.println("name值元素个数:"+name.size());
-        System.out.println("数据分别是:"+name.toString());
+        //System.out.println("name值元素个数:"+name.size());
+       // System.out.println("数据分别是:"+name.toString());
         //jwt解析,获取的headers Authorization
         //获取头数据,打印展示
         HttpHeaders headers = request.getHeaders();
