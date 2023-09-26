@@ -11,6 +11,26 @@ spring:
     web-application-type: reactive
   cloud:
     gateway:
+      # 可以配置跨域
+      globalcors:
+        cors-configurations:
+          "[/**]":
+            #允许 origin来源的配置
+            allowed-origin-patterns: "*"
+              #- "order.luban.com"
+            #- "cart.luban.com"
+            #- "**.luban.com"
+            #允许跨域cors时的头
+            allowed-headers: "*"
+            #- "Accept"
+            #- "Authorization"
+            #允许跨域的方法
+            allowed-methods: "*"
+            #- "GET"
+            #- "POST"
+            allow-credentials: true
+            #跨域允许后 最长保存时间 秒
+            max-age: 7200
       # 为入门案例转发,做一个路由配置
       # routes 是一个list类型属性
       # 表示可以在网关中配置的路由规则

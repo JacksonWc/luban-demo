@@ -14,14 +14,15 @@
         <module name="luban-demo-cart-api" />
         <module name="luban-log-springboot-test" />
         <module name="luban-demo-all-main" />
-        <module name="luban-demo-protocol" />
         <module name="luban-demo-stock-api" />
+        <module name="luban-demo-protocol" />
         <module name="luban-demo-all-api" />
         <module name="luban-demo-stock-main" />
         <module name="luban-demo-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gateway-test" target="8" />
       <module name="luban-demo-main" target="8" />
       <module name="luban-log-demo" target="8" />
       <module name="luban-log-springboot-study" target="8" />
@@ -29,6 +30,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gateway-test" options="-parameters" />
       <module name="luban-demo-all" options="-parameters" />
       <module name="luban-demo-all-api" options="-parameters" />
       <module name="luban-demo-all-main" options="-parameters" />
