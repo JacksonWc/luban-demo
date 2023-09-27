@@ -7,14 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="luban-demo-order-main" />
         <module name="luban-demo-common" />
-        <module name="luban-demo-cart-main" />
         <module name="luban-demo-order-api" />
+        <module name="luban-sentinel-demo001" />
         <module name="luban-demo-cart-api" />
         <module name="luban-log-springboot-test" />
         <module name="luban-demo-all-main" />
         <module name="luban-demo-stock-api" />
+        <module name="luban-demo-order-main" />
+        <module name="luban-demo-cart-main" />
         <module name="luban-demo-protocol" />
         <module name="luban-demo-all-api" />
         <module name="luban-demo-stock-main" />
@@ -26,6 +27,7 @@
       <module name="luban-demo-main" target="8" />
       <module name="luban-log-demo" target="8" />
       <module name="luban-log-springboot-study" target="8" />
+      <module name="luban-sentinel-demo01" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -47,6 +49,9 @@
       <module name="luban-demo-stock" options="-parameters" />
       <module name="luban-demo-stock-api" options="-parameters" />
       <module name="luban-demo-stock-main" options="-parameters" />
+      <module name="luban-sentinel-demo001" options="-parameters" />
+      <module name="luban-sentinel-demo01" options="-parameters" />
+      <module name="luban-sentinel-study" options="-parameters" />
     </option>
   </component>
 </project>
