@@ -9,7 +9,8 @@ import org.springframework.context.annotation.*;
  */
 @Configuration
 @ComponentScan(basePackages =
-        {"com.tarena.luban.spring.boot.beans"} )
+        {"com.tarena.luban.spring.boot.beans",
+        "com.tarena.luban.spring.boot.config.conditional"} )
 @Import(Demo02Conf.class)
 @PropertySource("test.properties")
 public class Demo01Conf {
