@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    sentinel:
+      datasource:
+        "nacos-flow-rules":
+          nacos:
+            # 配置中心地址
+            server-addr: localhost:8848
+            # sentinel 1.7 之后必须配置的授权
+            username: nacos
+            password: nacos
+            # 到底需要读取哪个文件
+            data-id: flowRules.json
+            # 每个数据源 读取的文件 配置 只能生成一个类型的规则 FlowRule DegradeRule
+            rule-type: flow
+            #? 如果需要配置多种不同类型的规则 数据源  多配置几个数据源

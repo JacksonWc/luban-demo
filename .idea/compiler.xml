@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="luban-demo-common" />
+        <module name="luban-sentinal-demo03" />
         <module name="luban-demo-order-api" />
         <module name="luban-sentinel-demo001" />
         <module name="luban-demo-cart-api" />
@@ -50,6 +51,7 @@
       <module name="luban-demo-stock" options="-parameters" />
       <module name="luban-demo-stock-api" options="-parameters" />
       <module name="luban-demo-stock-main" options="-parameters" />
+      <module name="luban-sentinal-demo03" options="-parameters" />
       <module name="luban-sentinel-demo001" options="-parameters" />
       <module name="luban-sentinel-demo01" options="-parameters" />
       <module name="luban-sentinel-demo02" options="-parameters" />
