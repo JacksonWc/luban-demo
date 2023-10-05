@@ -15,6 +15,7 @@
         <module name="luban-demo-all-main" />
         <module name="luban-demo-stock-api" />
         <module name="luban-demo-order-main" />
+        <module name="luban-sentinel-demo02" />
         <module name="luban-demo-cart-main" />
         <module name="luban-demo-protocol" />
         <module name="luban-demo-all-api" />
@@ -51,6 +52,7 @@
       <module name="luban-demo-stock-main" options="-parameters" />
       <module name="luban-sentinel-demo001" options="-parameters" />
       <module name="luban-sentinel-demo01" options="-parameters" />
+      <module name="luban-sentinel-demo02" options="-parameters" />
       <module name="luban-sentinel-study" options="-parameters" />
     </option>
   </component>

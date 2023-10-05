@@ -16,7 +16,7 @@
         <module>luban-demo-stock</module>
         <module>luban-demo-gateway</module>
         <module>luban-sentinel-study</module>
-        <module>luban-sentinel-demo01</module>
+
 
     </modules>
 

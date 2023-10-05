@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>luban-sentinel-demo001</module>
+        <module>luban-sentinel-demo02</module>
     </modules>
 
     <properties>
