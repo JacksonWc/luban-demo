@@ -22,6 +22,7 @@
         <module name="luban-demo-all-api" />
         <module name="luban-demo-stock-main" />
         <module name="luban-demo-gateway" />
+        <module name="luban-spring-boot-starter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -56,6 +57,7 @@
       <module name="luban-sentinel-demo01" options="-parameters" />
       <module name="luban-sentinel-demo02" options="-parameters" />
       <module name="luban-sentinel-study" options="-parameters" />
+      <module name="luban-spring-boot-starter" options="-parameters" />
     </option>
   </component>
 </project>
