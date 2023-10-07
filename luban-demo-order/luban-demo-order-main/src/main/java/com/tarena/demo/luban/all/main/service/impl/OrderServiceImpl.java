@@ -41,6 +41,9 @@ public class OrderServiceImpl implements OrderService {
         //远程调用购物车删除 虽然底层远程调用可能失败,但是 调用者总可以拿到一个可用的数据
         cartRpcComponent.deleteCart(param);
 
+        //在当前orderServiceImpl中 定义一个单独的方法 将删除购物车单独封装
+        //不能触发 sentinel组件的代理逻辑
+
         /*this.deleteCart(param);*/
         //删除购物车
         /*Entry entry=null;
