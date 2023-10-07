@@ -16,21 +16,10 @@ public class HelloController {
     private HelloService helloService;
     @GetMapping("/hello")
     public String sayHello(String name){
-        //准备一个sentinel资源入口,进入sentinel统计责任链中
-        Entry entry=null;
-        try{
-            //对entry赋值,赋值过程,会真正进入sentinel计算统计责任链中
-            entry= SphU.entry("sayHello");
+        System.out.println("注入到控制层的class:"+helloService.getClass().getName());
+        System.out.println("控制层调用");
             String result=helloService.sayHello(name);
             return result;
-        }catch (BlockException e){
-            log.info("当前资源sayHello受到了限制",e);
-        }finally {
-            //释放entry资源
-            if(entry!=null){
-                entry.exit();
-            }
-        }
-        return "error";
+
     }
 }

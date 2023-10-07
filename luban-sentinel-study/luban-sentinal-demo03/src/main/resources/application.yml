@@ -2,6 +2,13 @@ spring:
   cloud:
     sentinel:
       datasource:
+        "nacos-annotation-degrade-rules":
+          nacos:
+            server-addr: localhost:8848
+            username: nacos
+            password: nacos
+            data-id: annnotation-degrade.json
+            rule-type: degrade
         "nacos-degrade-rules":
           nacos:
             server-addr: localhost:8848
