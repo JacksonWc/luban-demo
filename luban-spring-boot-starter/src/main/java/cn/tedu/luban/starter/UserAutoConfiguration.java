@@ -4,7 +4,10 @@ import cn.tedu.luban.starter.user.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
+
+
 
 @Configuration
 @ConditionalOnProperty(prefix = "user",value="enable",havingValue = "true",matchIfMissing = false)

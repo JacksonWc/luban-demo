@@ -2,6 +2,13 @@ spring:
   cloud:
     sentinel:
       datasource:
+        "nacos-degrade-rules":
+          nacos:
+            server-addr: localhost:8848
+            username: nacos
+            password: nacos
+            data-id: degrade.json
+            rule-type: degrade
         "nacos-flow-rules":
           nacos:
             # 配置中心地址
