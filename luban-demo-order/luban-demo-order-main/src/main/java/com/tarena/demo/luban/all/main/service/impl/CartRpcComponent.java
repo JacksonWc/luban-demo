@@ -20,7 +20,7 @@ public class CartRpcComponent {
     public boolean cartHandler(OrderAddParam param, BlockException e){
         //记录日志
         log.info(
-                "当前购物车:{},删除没有执行,熔断规则限制了,message:{}",
+                "当前购物车:{},删除没有执行,发生了BlockException，熔断规则限制了,message:{}",
                 param,
                 e.getClass().getName());
         //TODO 记录失败信息到数据库,或者发送失败消息,异步处理
@@ -29,7 +29,7 @@ public class CartRpcComponent {
     public boolean cartFallback(OrderAddParam param, Throwable e){
         //记录日志
         log.info(
-                "当前购物车:{},删除没有执行,熔断规则限制了,message:{}",
+                "当前购物车:{},删除没有执行,调用失败了发生了Throwable，做了降级处理,message:{}",
                 param,
                 e.getClass().getName());
         //TODO 记录失败信息到数据库,或者发送失败消息,异步处理
