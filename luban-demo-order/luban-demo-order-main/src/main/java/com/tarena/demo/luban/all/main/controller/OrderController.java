@@ -20,13 +20,13 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
     //步骤5
-    @Autowired
-    private DubboTestApi dubboTestApi;
+//    @Autowired
+//    private DubboTestApi dubboTestApi;
 
     @PostMapping("/add")
     @ApiOperation("新增订单的功能")
     public JsonResult addOrder(OrderAddParam orderAddParam){
-        System.out.println(dubboTestApi.sayHi("王翠花"));
+       // System.out.println(dubboTestApi.sayHi("王翠花"));
         orderService.addOrder(orderAddParam);
         return JsonResult.ok("新增订单完成!");
     }

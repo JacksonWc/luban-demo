@@ -13,3 +13,14 @@
 
 user:
   enable: true
+spring:
+  cloud:
+    sentinel:
+      datasource:
+        "nacos-degrade-rules":
+          nacos:
+            server-addr: localhost:8848
+            username: nacos
+            password: nacos
+            data-id: degradeRules.json
+            rule-type: degrade

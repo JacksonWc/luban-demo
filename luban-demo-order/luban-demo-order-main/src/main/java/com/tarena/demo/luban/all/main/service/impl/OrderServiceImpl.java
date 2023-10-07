@@ -15,12 +15,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-    @Autowired(required = false)
-    private CartApi consumerCartApi;
+//    @Autowired(required = false)
+//    private CartApi consumerCartApi;
     @Autowired
     private StockApi stockApi;
     @Autowired
     private OrderMapper orderMapper;
+    @Autowired
+    private CartRpcComponent cartRpcComponent;
+
+
+
     @Override public void addOrder(OrderAddParam param) {
         // 减库存
         StockReduceCountParam stockReduceCountParam=new StockReduceCountParam();
@@ -32,12 +37,9 @@ public class OrderServiceImpl implements OrderService {
         OrderDO orderDO=new OrderDO();
         BeanUtils.copyProperties(param,orderDO);
         orderMapper.insertOrder(orderDO);
-        //删除购物车
-        CartDeleteParam cartDeleteParam=new CartDeleteParam();
-        cartDeleteParam.setUserId(param.getUserId());
-        cartDeleteParam.setProductCode(param.getProductCode());
-        //cartService.deleteCart(cartDeleteParam);
-        consumerCartApi.deleteCart(cartDeleteParam);
+
+        //远程调用购物车删除 虽然底层远程调用可能失败,但是 调用者总可以拿到一个可用的数据
+        cartRpcComponent.deleteCart(param);
 
         /*this.deleteCart(param);*/
         //删除购物车
