@@ -38,5 +38,26 @@ public class OrderServiceImpl implements OrderService {
         cartDeleteParam.setProductCode(param.getProductCode());
         //cartService.deleteCart(cartDeleteParam);
         consumerCartApi.deleteCart(cartDeleteParam);
+
+        /*this.deleteCart(param);*/
+        //删除购物车
+        /*Entry entry=null;
+        try{
+            entry= SphU.entry("orderAdd");
+        CartDeleteParam cartDeleteParam=new CartDeleteParam();
+        cartDeleteParam.setUserId(param.getUserId());
+        cartDeleteParam.setProductCode(param.getProductCode());
+        cartApi.deleteCart(cartDeleteParam);
+        }catch (BlockException e){
+            //捕获异常 记录异常数 如果不记录 无法触发异常数熔断机制
+            entry.setBlockError(e);
+        }catch(Throwable e){
+            //捕获异常 记录异常数 如果不记录 无法触发异常数熔断机制
+            entry.setError(e);
+        }finally {
+            if (entry!=null) entry.exit();
+        }*/
+        //上述这种方式 定义资源 侵入性强,减少侵入
+        //使用注解
     }
 }
