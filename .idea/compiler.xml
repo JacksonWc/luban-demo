@@ -18,6 +18,7 @@
         <module name="luban-demo-order-main" />
         <module name="luban-sentinel-demo02" />
         <module name="luban-demo-cart-main" />
+        <module name="luban-rocketmq-study" />
         <module name="luban-demo-protocol" />
         <module name="luban-demo-all-api" />
         <module name="luban-demo-stock-main" />
@@ -52,6 +53,7 @@
       <module name="luban-demo-stock" options="-parameters" />
       <module name="luban-demo-stock-api" options="-parameters" />
       <module name="luban-demo-stock-main" options="-parameters" />
+      <module name="luban-rocketmq-study" options="-parameters" />
       <module name="luban-sentinal-demo03" options="-parameters" />
       <module name="luban-sentinel-demo001" options="-parameters" />
       <module name="luban-sentinel-demo01" options="-parameters" />

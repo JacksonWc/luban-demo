@@ -17,6 +17,7 @@
         <module>luban-demo-gateway</module>
         <module>luban-sentinel-study</module>
         <module>luban-spring-boot-starter</module>
+        <module>luban-rocketmq-study</module>
 
 
     </modules>
