@@ -1,0 +1,12 @@
+server:
+  port: 8999
+# 满足rocketmq的自动配置逻辑的属性
+rocketmq:
+  # nameserver 连接的nameserver
+  name-server: localhost:9876
+  # defualMQProducer 的属性条件 必须指定producer.group
+  producer:
+    group: test-producer-group
+  # 不是必须的
+  consumer:
+    group: test-consumer-group
