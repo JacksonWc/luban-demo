@@ -6,6 +6,8 @@ import org.apache.rocketmq.common.message.*;
 import org.junit.Test;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyProducer {
     @Test
@@ -21,6 +23,16 @@ public class MyProducer {
     //2.封装准备生产者要发送的消息
         //创建一个消息对象
         Message message=new Message();
+
+        //绑定一个key值
+        List<String> keys=new ArrayList<>();
+        keys.add("abc");
+        keys.add("cba");
+        message.setKeys(keys);
+        //设置tag标签 在消费端对标签进行过滤消费
+        message.setTags("tagA");
+
+
         //准备一个消息包装的文本
         String msgTxt="欢迎来到rocketmq";
         //消息体 保存消息文本byte数组

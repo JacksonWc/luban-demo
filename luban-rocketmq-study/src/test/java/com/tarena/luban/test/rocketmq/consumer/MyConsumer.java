@@ -22,7 +22,9 @@ public class MyConsumer {
         //给消费者提供分组,同一个分组的消费者可以有多个消费者对象进程
         consumer.setConsumerGroup("consumer-01");
         //提供消费者监听绑定的目标主题
-        consumer.subscribe("topic-01","*");
+//        consumer.subscribe("topic-01","*");
+        //提供消费者监听绑定的目标主题 明确表示,要消费的消息 tag必须=tagA，没有标签的会不会消费
+        consumer.subscribe("topic-01","tagA");
     //2. 执行api方法监听主题 拿到消息消费者过程
         //consumer可以调用api方法 ,我们提供一个监听器对象 进行消息的消费
         consumer.setMessageListener(new MessageListenerConcurrently() {
