@@ -15,7 +15,8 @@ public class StockServiceImpl implements StockService {
     @Autowired
     private StockMapper stockMapper;
     @Override public void reduceCommodityCount(StockReduceCountParam param) {
-        //保证reduceCommodityCount是幂等设计
+        //解决重复消费的问题--减库存的后续执行
+        // 保证reduceCommodityCount是幂等设计
         //查询日志 是否存在该订单编号的库存减少就,如果有,说明已经调用过减库存了
         int result=stockMapper.selectLogCountByOrderSn(param.getOrderSn());
         if (result>0){
