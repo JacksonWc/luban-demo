@@ -30,6 +30,29 @@ public class SendController {
                         syncSend("test-spring-topic", message);//同步消息发送
 
 
+
+        /**
+         *String destination: 目的地 指的是 topic+tag标签
+         *Message message: spring框架整合的message 内部包含了body序列化与返序列化过程 看不到byte[]
+         *SendCallback回调: 会在发送结束后 调用回调方法
+         * success回调: 发成功了
+         * exception回调: 发送出现异常了.
+         */
+        /*rocketMQTemplate.asyncSend("test-spring-topic", message, new SendCallback() {
+            @Override
+            public void onSuccess(SendResult sendResult) {
+                System.out.println("成功发送了");
+            }
+
+            @Override
+            public void onException(Throwable e) {
+                e.printStackTrace();
+                System.out.println("发送消息失败了,失败信息:"+e.getMessage());
+            }
+        });*/
+        //rocketMQTemplate.asyncSend();//异步消息发送,无法直接在同步代码中拿到返回值,速度比同步发快
+
+
         /**
          *
 
