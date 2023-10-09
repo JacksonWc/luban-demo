@@ -3,6 +3,7 @@ package com.tarena.demo.luban.all.main.mapper;
 import com.tarena.demo.luban.protocol.stock.dos.StockDO;
 import com.tarena.demo.luban.protocol.stock.dos.StockLogDO;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +17,7 @@ public interface StockMapper {
     @Insert("insert into stock_log_tbl (id,order_sn,product_code,reduce_stock) values " +
             "(null,#{orderSn},#{productCode},#{reduceCount})")
     int insertStockLog(StockLogDO stockLogDO);
+
+    @Select("select count(*) from stock_log_tbl where order_sn=#{orderSn}")
+    int selectLogCountByOrderSn(String orderSn);
 }
