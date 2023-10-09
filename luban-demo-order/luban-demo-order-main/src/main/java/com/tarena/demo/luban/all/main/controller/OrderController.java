@@ -40,7 +40,7 @@ public class OrderController {
         //准备一个消息对象
         Message<OrderAddParam> message=
                 MessageBuilder.withPayload(orderAddParam).build();
-        //发送消息 同步发送
+        //发送消息 同步发送  RocketMQTemplate中的String destination指的是 目的地 指的是 topic+tag标签
         //***:** 这种格式的desitination 底层翻译的时候 解析成 topic:tag
         rocketMQTemplate.syncSend("luban-demo-order-topic:addOrder",message);
 
