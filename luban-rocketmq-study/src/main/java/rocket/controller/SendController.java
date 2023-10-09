@@ -28,11 +28,29 @@ public class SendController {
         SendResult sendResult =
                 rocketMQTemplate.
                         syncSend("test-spring-topic", message);//同步消息发送
+
+
         /**
          *
+
+         *
+         *
+         *
+         *          *  //延迟消息发送 允许发送消息的时候 api方法参数 设置延迟级别 1 2 3 4 5 18 根据不同级别 消息
+         *          *         //出现在队列的时间滞后时间不同
+         *          *         /**
+         *          *          * String destination: 目的地 指的是 topic+tag标签
+         *          *          * Message message: spring框架整合的message 内部包含了body序列化与返序列化过程 看不到byte[]
+         *          *          * timeout: 单位毫秒的 底层连接超时时间 默认3000
+         *          *          * delayLevel: 1-18
+         *          *
+         rocketMQTemplate.syncSend("test-spring-topic", message, 3000, 4);
+
+
          */
-        //rocketMQTemplate.asyncSend();//异步消息发送,无法直接在同步代码中拿到返回值,速度比同步发快
-        //延迟消息发送
+
+
+
         return "success";
     }
 }
