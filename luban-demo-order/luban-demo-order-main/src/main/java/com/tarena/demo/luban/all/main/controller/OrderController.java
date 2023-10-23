@@ -7,6 +7,7 @@ import commons.restful.JsonResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import com.tarena.demo.luban.all.main.service.OrderService;
+import lombok.extern.slf4j.Slf4j;
 import luban.demo.cart.api.DubboTestApi;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+@Slf4j
 @RestController
 @RequestMapping("/base/order")
 @Api(tags = "订单")
@@ -38,6 +41,7 @@ public class OrderController {
         //发送一条消息 目的实现业务层代码的调用
         //新增订单 orderAddParam作为payLoad发送 需要确定这个类型是否实现了序列化接口
         //准备一个消息对象
+        log.debug("开始调用新增订单的controller{}",orderAddParam);
         Message<OrderAddParam> message=
                 MessageBuilder.withPayload(orderAddParam).build();
         //发送消息 同步发送  RocketMQTemplate中的String destination指的是 目的地 指的是 topic+tag标签

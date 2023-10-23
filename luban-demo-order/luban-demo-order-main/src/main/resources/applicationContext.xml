@@ -25,7 +25,7 @@
     <dubbo:reference id="consumerCartApi" interface="luban.demo.cart.api.CartApi"
                      registry="nacos" check="false"/>
 
-    <dubbo:reference id="consumerStockApi" interface="luban.demo.stock.api.StockApi"
+    <dubbo:reference id="stockApiImpl" interface="luban.demo.stock.api.StockApi"
                      registry="nacos" check="false"/>
 
 

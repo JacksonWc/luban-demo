@@ -35,6 +35,8 @@ public class CartRpcComponent {
         //TODO 记录失败信息到数据库,或者发送失败消息,异步处理
         return true;
     }
+
+
     @Autowired
     private CartApi cartApi;
     //sentinel资源方法

@@ -59,6 +59,12 @@
             <artifactId>rocketmq-acl</artifactId>
             <version>4.9.4</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.tarena.passport</groupId>
+            <artifactId>passport-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

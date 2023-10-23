@@ -1,7 +1,7 @@
 package com.tarena.demo.luban.all.main.service.impl;
 
 
-import com.tarena.demo.luban.protocol.cart.param.CartDeleteParam;
+
 import com.tarena.demo.luban.protocol.order.dos.OrderDO;
 import com.tarena.demo.luban.protocol.order.param.OrderAddParam;
 import com.tarena.demo.luban.protocol.stock.param.StockReduceCountParam;
@@ -21,7 +21,7 @@ public class OrderServiceImpl implements OrderService {
 //    @Autowired(required = false)
 //    private CartApi consumerCartApi;
     @Autowired
-    private StockApi stockApi;
+    private StockApi stockApiImpl;
     @Autowired
     private OrderMapper orderMapper;
     @Autowired
@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
         stockReduceCountParam.setReduceCount(param.getCount());
         stockReduceCountParam.setProductCode(param.getProductCode());
         stockReduceCountParam.setOrderSn(param.getOrderSn());
-        stockApi.reduceCommodityCount(stockReduceCountParam);
+        stockApiImpl.reduceCommodityCount(stockReduceCountParam);
         //增订单
         OrderDO orderDO=new OrderDO();
         BeanUtils.copyProperties(param,orderDO);
